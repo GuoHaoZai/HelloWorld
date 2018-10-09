@@ -1,0 +1,53 @@
+﻿添加全局配置文件
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+
+查看全局配置文件
+    git config --list
+
+初始化git仓库 
+    git init
+    git init --bare 
+
+观察当前仓库的状态(如果git发现仓库之中增加了新的文件或者是修改了文件，都会提示）
+    git status
+
+将文件添加到git暂存区中
+    git add "filename"
+
+批量添加新文件到暂存区中
+    git add .
+
+将文件提交到版本库中(这样才能被项目真正使用）
+    git commit -m "提交的注释信息"
+
+自动增加并提交到版本库中
+    git commit -a -m "提交的注释信息"
+
+
+
+比较修改前后的文件有什么差别
+    git diff "fileName"
+
+查看提交历史(会显示commit id 可以提供版本回退的处理机制）
+    git log <fileName>
+    git log --pretty=oneline   (在一行显示)
+
+查看所有的操作信息
+    git reflog
+
+版本回退
+    回退到上一个版本
+    git reset --hard HEAD~1
+
+版本穿梭
+    git reset --hard "commitid"
+
+
+
+
+
+工作区（用户所编写的代码的文件夹）：所有的文件操作都以工作区为主
+gie仓库（HEAD）：
+    暂存区：只是将工作区中的未保存文件保存到暂存区中，此部分由GIT维护
+    版本区（Master）：是真正进行项目发布的代码
