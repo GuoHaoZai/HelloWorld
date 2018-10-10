@@ -26,6 +26,8 @@
 
 
 
+
+
 比较修改前后的文件有什么差别
     git diff "fileName"
 
@@ -36,18 +38,58 @@
 查看所有的操作信息
     git reflog
 
-版本回退
-    回退到上一个版本
-    git reset --hard HEAD~1
 
-版本穿梭
+
+
+	                  git add .             git commit -a -m
+  	          ——————————>       ——————————>
+  	  工作区                       暂存区                     版本区
+     git checkout<——————————                      git reset --hard "commitid"
+     	          git reset <filename>        
+
+版本回退
+  回退到上一个版本
+    git reset --hard HEAD~1
+  版本穿梭
     git reset --hard "commitid"
 
 
+撤销修改
+  没有add&commit
+    直接使用git checkout提示哪些文件被改变
+  git checkout <filename>
+    恢复到上一次的代码
+已经add没有commit
+  git reset <filename> 将暂存区中的文件回退到工作区中 
 
+
+文件误删
+    对于工作区的文件恢复可以使用git checkout 
+    对于master分支的文件删除只能使用 版本穿梭进行恢复
 
 
 工作区（用户所编写的代码的文件夹）：所有的文件操作都以工作区为主
 gie仓库（HEAD）：
     暂存区：只是将工作区中的未保存文件保存到暂存区中，此部分由GIT维护
     版本区（Master）：是真正进行项目发布的代码
+
+
+
+
+github
+
+生成密钥
+    ssh-keygen -t rsa -C "you@example.com"
+
+创建一个仓库
+
+
+
+git 提交到远程仓库
+
+建立客户端与服务器端的连接地址信息
+git remote add origin 仓库地址
+
+连接建立完成之后，需要将本地仓库的全部代码推送到服务器端
+git push -u origin master
+
