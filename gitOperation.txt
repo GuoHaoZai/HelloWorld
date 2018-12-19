@@ -5,6 +5,7 @@
 查看全局配置文件
     git config --list
 
+
 初始化git仓库 
     git init
     git init --bare 
@@ -43,7 +44,7 @@
 
 	                  git add .             git commit -a -m
   	          ——————————>       ——————————>
-  	  工作区                       暂存区                     版本区
+    工作区（仓库）                      暂存区                     版本区
      git checkout<——————————                      git reset --hard "commitid"
      	          git reset <filename>        
 
@@ -76,13 +77,16 @@ gie仓库（HEAD）：
 
 
 
+
+
+
 github
 
 生成密钥
     ssh-keygen -t rsa -C "you@example.com"
 
 创建一个仓库
-
+	
 
 
 git 提交到远程仓库
